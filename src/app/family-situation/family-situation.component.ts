@@ -10,9 +10,6 @@ import {KycResult, Relation} from "./kyc-result";
 })
 export class FamilySituationComponent {
 
-  constructor() { }
-
   @Input() kycResult: KycResult;
   @Input() isLoading: boolean;
-
 }
