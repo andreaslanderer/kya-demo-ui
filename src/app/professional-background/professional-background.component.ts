@@ -18,6 +18,7 @@ export class ProfessionalBackgroundComponent {
 
   onProcess() {
     this.isLoading = true
+    this.profBackground = undefined
     this.http.post(`${this.backendUrl}/professionalBackground/professionalBackgroundNew`, { partnerId: this.partnerId })
       .subscribe(
         data => {
