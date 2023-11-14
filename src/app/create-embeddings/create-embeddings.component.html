@@ -1,0 +1,20 @@
+<div class="slds-grid slds-grid_pull-padded slds-grid_vertical-align-end slds-m-top_large">
+  <div class="slds-col_padded">
+    <ngl-input label="Partner ID" fieldLevelHelpTooltip="Unique identifier of the partner">
+      <input ngl type="text" [required]="true" [disabled]="false" placeholder="Partner ID" [(ngModel)]="partnerId">
+    </ngl-input>
+    <ngl-input label="Document ID" fieldLevelHelpTooltip="Identifier of the document">
+      <input ngl type="text" [required]="true" [disabled]="false" placeholder="Document ID" [(ngModel)]="documentId">
+    </ngl-input>
+    <ngl-textarea label="Background Information">
+      <textarea ngl [required]="false" [disabled]="false" [(ngModel)]="backgroundInformation"
+                placeholder="Put the text to be embedded here"></textarea>
+    </ngl-textarea>
+    <button class="slds-m-top_large" type="button" variant="brand" nglButton (click)="createEmbeddings()">
+      Create Embeddings
+    </button>
+  </div>
+</div>
+<div style="position:relative; height:6.25rem; z-index:0;" *ngIf="isLoading">
+  <ngl-spinner alternativeText="Loading"></ngl-spinner>
+</div>
