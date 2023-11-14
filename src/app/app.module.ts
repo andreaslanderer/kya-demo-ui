@@ -16,6 +16,7 @@ import { EducationTableComponent } from './professional-background/education-tab
 import { EmploymentTableComponent } from './professional-background/employment-table/employment-table.component';
 import { SelfEmploymentTableComponent } from './professional-background/self-employment-table/self-employment-table.component';
 import { UnemploymentTableComponent } from './professional-background/unemployment-table/unemployment-table.component';
+import { CreateEmbeddingsComponent } from './create-embeddings/create-embeddings.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UnemploymentTableComponent } from './professional-background/unemployme
     EducationTableComponent,
     EmploymentTableComponent,
     SelfEmploymentTableComponent,
-    UnemploymentTableComponent
+    UnemploymentTableComponent,
+    CreateEmbeddingsComponent
   ],
     imports: [
         BrowserModule,
