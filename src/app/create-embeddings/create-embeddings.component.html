@@ -18,3 +18,8 @@
 <div style="position:relative; height:6.25rem; z-index:0;" *ngIf="isLoading">
   <ngl-spinner alternativeText="Loading"></ngl-spinner>
 </div>
+<ngl-modal [header]="header" [(open)]="opened">
+  <div class="slds-p-around_medium">
+    <h2>{{message}}</h2>
+  </div>
+</ngl-modal>

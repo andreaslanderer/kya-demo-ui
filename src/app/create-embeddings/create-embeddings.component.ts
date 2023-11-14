@@ -15,6 +15,11 @@ export class CreateEmbeddingsComponent {
   documentId: string = ''
   isLoading: boolean = false;
 
+  // model properties
+  header = ''
+  message = ''
+  opened = false
+
   constructor(private http: HttpClient) { }
 
   createEmbeddings() {
@@ -27,10 +32,16 @@ export class CreateEmbeddingsComponent {
     this.http.post(`${this.backendUrl}/embeddings/createEmbeddings`, request).subscribe(
       data => {
         this.isLoading = false
+        this.header = "Success"
+        this.message = `Successfully created new embeddings for document: ${this.documentId}`
+        this.opened = true
       },
       error => {
         console.error(error);
         this.isLoading = false
+        this.header = "Failure"
+        this.message = error.message
+        this.opened = true
       }
     );
   }

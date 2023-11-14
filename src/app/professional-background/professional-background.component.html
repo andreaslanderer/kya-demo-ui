@@ -12,7 +12,7 @@
 <div style="position:relative; height:6.25rem; z-index:0;"  *ngIf="isLoading">
   <ngl-spinner alternativeText="Loading"></ngl-spinner>
 </div>
-<div *ngIf="profBackground">
+<div *ngIf="profBackground && !isLoading">
   <div class="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center slds-m-top_large">
     <div class="slds-col_padded">
       <h1>Education</h1>
