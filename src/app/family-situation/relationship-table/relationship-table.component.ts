@@ -14,7 +14,7 @@ export class RelationshipTableComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['relationships']) {
+    if (changes['incomingInstitutionBanks']) {
     }
   }
 }

@@ -8,6 +8,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FamilySituationComponent } from './family-situation/family-situation.component';
 import { RelationshipTableComponent } from './family-situation/relationship-table/relationship-table.component';
+import { FundIncomeTableComponent } from './source-of-funds/fundincome-table/fundincome-table.component';
+import { SourceOfFundsComponent } from './source-of-funds/source-of-funds.component';
 import { MigrationComponent } from './migration/migration.component';
 import { LegacyDataComponent } from './legacy-data/legacy-data.component';
 import {NgOptimizedImage} from "@angular/common";
@@ -22,6 +24,8 @@ import { UnemploymentTableComponent } from './professional-background/unemployme
     AppComponent,
     FamilySituationComponent,
     RelationshipTableComponent,
+    SourceOfFundsComponent,
+    FundIncomeTableComponent,
     MigrationComponent,
     LegacyDataComponent,
     ProfessionalBackgroundComponent,

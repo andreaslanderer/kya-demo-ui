@@ -1,0 +1,53 @@
+<div class="slds-form-element form-container" *ngIf="!isLoading">
+  <label class="slds-form-element__label" for="textarea-investment">Planned Initial Investment (CHF):</label>
+  <div class="slds-form-element__control">
+    <textarea id="textarea-investment" class="slds-textarea" [(ngModel)]="plannedInitialInvestmentChf" rows="4"></textarea>
+  </div>
+</div>
+
+<!-- Spinner anzeigen, wenn isLoading true ist -->
+<div *ngIf="isLoading" class="loading-spinner">
+  <div class="slds-spinner slds-spinner_medium">
+    <span class="slds-assistive-text">Ladevorgang...</span>
+  </div>
+</div>
+
+<!-- Anzeige der Serverantwort -->
+<div *ngIf="serverResponse" class="server-response">
+  <h3>Server Response</h3>
+  <div class="response-container">
+    <pre>{{ serverResponse | json }}</pre>
+  </div>
+</div>
+
+<button class="slds-button slds-button_brand" (click)="processInput()">Process Data</button>
+
+<style>
+  .form-container {
+    margin: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  }
+
+  .loading-spinner {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .server-response {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .response-container {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+  }
+</style>
