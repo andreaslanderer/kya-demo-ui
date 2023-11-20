@@ -1,0 +1,51 @@
+<article class="slds-card">
+  <div class="slds-card__header slds-grid">
+    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+      <div class="slds-media__figure">
+        <span class="slds-icon_container slds-icon-standard-account" title="bank">
+          <svg class="slds-icon slds-icon_small" aria-hidden="true">
+            <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#account"></use>
+          </svg>
+          <span class="slds-assistive-text">bank</span>
+        </span>
+      </div>
+      <div class="slds-media__body">
+        <h2 class="slds-card__header-title">
+          <a href="#" class="slds-card__header-link slds-truncate" title="Bank Institutions">
+            <span>Bank Institutions ({{incomingInstitutionBanks.length}})</span>
+          </a>
+        </h2>
+      </div>
+    </header>
+  </div>
+  <div class="slds-card__body">
+    <table class="slds-table slds-table_bordered slds-table_fixed-layout">
+      <thead>
+      <tr class="slds-line-height_reset">
+        <th scope="col">
+          <div class="slds-truncate" title="Institution Bank Name">Institution Bank Name</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Place of the Institution Bank">Place of the Institution Bank</div>
+        </th>
+        <th scope="col">
+          <div class="slds-truncate" title="Country ISO Code">Country ISO Code</div>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let bank of incomingInstitutionBanks">
+        <td data-label="Institution Bank Name">
+          <div class="slds-truncate" title="{{ bank.institutionBankName }}">{{ bank.institutionBankName }}</div>
+        </td>
+        <td data-label="Place of the Institution Bank">
+          <div class="slds-truncate" title="{{ bank.placeOfTheInstitutionBank }}">{{ bank.placeOfTheInstitutionBank }}</div>
+        </td>
+        <td data-label="Country ISO Code">
+          <div class="slds-truncate" title="{{ bank.countryIsoCode }}">{{ bank.countryIsoCode }}</div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</article>
