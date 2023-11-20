@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { SourceOfFundsKycResult } from './kyc-result2';
 import { HttpClient } from '@angular/common/http';
+import { forkJoin } from 'rxjs';
+import { SourceOfFundsKycResult } from './kyc-result2';
 
 @Component({
   selector: 'app-source-of-funds',
@@ -9,30 +10,52 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SourceOfFundsComponent {
   @Input() kycResult2: SourceOfFundsKycResult;
-  isLoading: boolean = false; // Initial auf false gesetzt
+  isLoading: boolean = false;
 
   plannedInitialInvestmentChf: number;
-  serverResponse: any;
+  serverResponses: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   processInput(): void {
-    console.log('Process Data button clicked');
-    console.log('Processing input:', this.plannedInitialInvestmentChf);
-
-    this.isLoading = true; // Spinner anzeigen
-    const url = 'http://localhost:3000/sourceOfFundsNew';
+    this.isLoading = true;
     const data = { text: this.plannedInitialInvestmentChf.toString() };
 
-    this.http.post(url, data).subscribe(
-        response => {
-          this.serverResponse = response;
-          this.isLoading = false; // Spinner ausblenden
-        },
-        error => {
-          console.error('Error:', error);
-          this.isLoading = false; // Spinner ausblenden auch bei Fehler
-        }
+    console.log('Sending POST request:', data);
+
+    const incomeMiscellaneousRequest = this.http.post('http://localhost:3000/incomeMiscellaneous', data);
+    const incomeBusinessRequest = this.http.post('http://localhost:3000/incomeFromBusinessActivities', data);
+    const incomeRealEstateRequest = this.http.post('http://localhost:3000/incomeFromRealEstateSales', data);
+    const incomeInheritanceRequest = this.http.post('http://localhost:3000/incomeFromInheritance', data);
+    const incomeFromSalesInterestRequest = this.http.post('http://localhost:3000/incomeFromSalesInterest', data);
+
+    forkJoin([incomeMiscellaneousRequest, incomeBusinessRequest, incomeRealEstateRequest, incomeInheritanceRequest, incomeFromSalesInterestRequest]).subscribe(
+      responses => {
+        this.serverResponses = responses;
+        this.isLoading = false;
+
+        console.log('Full Responses:', responses);
+        console.log('Server Responses:', this.serverResponses);
+      },
+      error => {
+        console.error('Error:', error);
+        this.isLoading = false;
+      }
     );
+  }
+
+  // Methode zum Erhalten der Schlüssel eines Objekts
+  public getKeys(obj: any): string[] {
+    return Object.keys(obj);
+  }
+
+  // Methode zur Überprüfung, ob eine Variable ein Array ist
+  public isArray(obj: any): boolean {
+    return Array.isArray(obj);
+  }
+
+  // Methode zur Überprüfung, ob eine Variable ein Objekt ist
+  public isObject(obj: any): boolean {
+    return obj != null && typeof obj === 'object' && !Array.isArray(obj);
   }
 }
