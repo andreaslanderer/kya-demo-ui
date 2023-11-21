@@ -29,4 +29,4 @@ jobs:
         run: ng build --configuration production
 
       - name: Deploy to Google App Engine
-        run: gcloud app deploy app.yaml
+        run: gcloud app deploy app.yaml --project silent-relic-393813
