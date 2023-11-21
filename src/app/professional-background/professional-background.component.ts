@@ -9,10 +9,10 @@ import {ProfessionalBackground} from "./professional-background.result";
   styleUrls: ['./professional-background.component.css']
 })
 export class ProfessionalBackgroundComponent {
-  backendUrl = environment.backendUrl;
+  backendUrl = environment.backendUrl
   partnerId = ''
   profBackground?: ProfessionalBackground
-  isLoading: boolean = false;
+  isLoading: boolean = false
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +26,7 @@ export class ProfessionalBackgroundComponent {
           this.isLoading = false
         },
         error => {
-          console.error(error);
+          console.error(error)
           this.isLoading = false
         }
       );
