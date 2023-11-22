@@ -8,7 +8,7 @@ import {LiquidityEntry} from "../assets-and-liabilities.result";
 })
 export class LiquidityTableComponent {
 
-  @Input() liquidityEntries: LiquidityEntry[]
+  @Input() entries: LiquidityEntry[]
   @Input() background: string
 
   opened = false

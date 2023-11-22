@@ -12,10 +12,17 @@
   <ngl-spinner alternativeText="Loading"></ngl-spinner>
 </div>
 <div class="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center slds-m-top_large">
-  <div class="slds-col_padded" *ngIf="!isLoading && assetsAndLiabilities">
-    <h1>Liquidity Assets</h1>
-    <app-liquidity-table [liquidityEntries]="assetsAndLiabilities.liquidity.liquidity"
-                         [background]="assetsAndLiabilities.liquidity.background">
+  <div class="slds-col_padded" *ngIf="!isLoading && liquidity">
+    <h1>Liquid Assets</h1>
+    <app-liquidity-table [entries]="liquidity.assets.assetEntries"
+                         [background]="liquidity.assets.background">
     </app-liquidity-table>
   </div>
 </div>
+<div class="slds-grid slds-grid_pull-padded slds-grid_vertical-align-center slds-m-top_large">
+  <div class="slds-col_padded" *ngIf="!isLoading && liquidity">
+    <h1>Liquid Liabilities</h1>
+    <app-liquidity-table [entries]="liquidity.liabilities.liabilityEntries"
+                         [background]="liquidity.liabilities.background">
+    </app-liquidity-table>
+  </div>
