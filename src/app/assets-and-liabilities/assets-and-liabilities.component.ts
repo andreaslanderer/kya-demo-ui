@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AssetsAndLiabilities, Liquidity} from "./assets-and-liabilities.result";
+import {AssetsAndLiabilities} from "./assets-and-liabilities.result";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 
@@ -13,17 +13,17 @@ export class AssetsAndLiabilitiesComponent {
   backendUrl = environment.backendUrl;
   partnerId = ''
   isLoading = false
-  liquidity?: Liquidity
+  assetsAndLiabilities?: AssetsAndLiabilities
 
   constructor(private http: HttpClient) { }
 
   onProcess() {
     this.isLoading = true
-    this.http.post(`${this.backendUrl}/assetsAndLiabilities/liquidity`, { partnerId: this.partnerId })
+    this.http.post(`${this.backendUrl}/assetsAndLiabilitiesNew`, { partnerId: this.partnerId })
       .subscribe(
         data => {
           console.log(data)
-          this.liquidity = data as Liquidity
+          this.assetsAndLiabilities = data as AssetsAndLiabilities
           this.isLoading = false
         },
         error => {

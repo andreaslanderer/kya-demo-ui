@@ -1,24 +1,17 @@
 
 export interface AssetsAndLiabilities {
-  liquidity: Liquidity
+  liquidityAssets: Asset
+  liquidityLiabilities: Asset
+  securityAssets: Asset
+  securityLiabilities: Asset
 }
 
-export interface Liquidity {
-  assets: LiquidAsset
-  liabilities: LiquidLiability
-}
-
-export interface  LiquidAsset {
-  assetEntries: LiquidityEntry[]
+export interface  Asset {
+  entries: AssetEntry[]
   background: string
 }
 
-export interface  LiquidLiability {
-  liabilityEntries: LiquidityEntry[]
-  background: string
-}
-
-export interface LiquidityEntry {
+export interface AssetEntry {
   asset: string
   amount: number
   currency: string
