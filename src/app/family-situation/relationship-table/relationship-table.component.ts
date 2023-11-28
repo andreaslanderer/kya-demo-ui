@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import { Relation } from '../kyc-result';
+import { Relation } from '../family-situation';
 
 @Component({
   selector: 'app-relationship-table',
