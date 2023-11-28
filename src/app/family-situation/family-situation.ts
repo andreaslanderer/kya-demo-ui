@@ -1,4 +1,4 @@
-export interface KycResult {
+export interface FamilySituation {
   personalDetails?: PersonalDetails
   civilStatus?: CivilStatus
   partnerRelations: PartnerRelations

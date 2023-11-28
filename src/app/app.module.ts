@@ -10,7 +10,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FamilySituationComponent } from './family-situation/family-situation.component';
 import { RelationshipTableComponent } from './family-situation/relationship-table/relationship-table.component';
-import { MigrationComponent } from './migration/migration.component';
 import { LegacyDataComponent } from './legacy-data/legacy-data.component';
 import {NgOptimizedImage, registerLocaleData} from "@angular/common";
 import { ProfessionalBackgroundComponent } from './professional-background/professional-background.component';
@@ -21,6 +20,7 @@ import { UnemploymentTableComponent } from './professional-background/unemployme
 import { CreateEmbeddingsComponent } from './create-embeddings/create-embeddings.component';
 import { AssetsAndLiabilitiesComponent } from './assets-and-liabilities/assets-and-liabilities.component';
 import { LiquidityTableComponent } from './assets-and-liabilities/liquidity-table/liquidity-table.component';
+import { PersonalDetailsComponent } from './family-situation/personal-details/personal-details.component';
 
 registerLocaleData(localeCh);
 
@@ -29,7 +29,6 @@ registerLocaleData(localeCh);
     AppComponent,
     FamilySituationComponent,
     RelationshipTableComponent,
-    MigrationComponent,
     LegacyDataComponent,
     ProfessionalBackgroundComponent,
     EducationTableComponent,
@@ -38,7 +37,8 @@ registerLocaleData(localeCh);
     UnemploymentTableComponent,
     CreateEmbeddingsComponent,
     AssetsAndLiabilitiesComponent,
-    LiquidityTableComponent
+    LiquidityTableComponent,
+    PersonalDetailsComponent
   ],
     imports: [
         BrowserModule,
