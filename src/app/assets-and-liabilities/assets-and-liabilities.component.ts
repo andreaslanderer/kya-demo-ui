@@ -22,8 +22,8 @@ export class AssetsAndLiabilitiesComponent {
     this.http.post(`${this.backendUrl}/assetsAndLiabilitiesNew`, { partnerId: this.partnerId })
       .subscribe(
         data => {
-          console.log(data)
           this.assetsAndLiabilities = data as AssetsAndLiabilities
+          console.log(this.assetsAndLiabilities)
           this.isLoading = false
         },
         error => {

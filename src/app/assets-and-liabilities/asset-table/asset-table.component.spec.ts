@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LiquidityTableComponent } from './liquidity-table.component';
+import { AssetTableComponent } from './asset-table.component';
 
 describe('LiquidityTableComponent', () => {
-  let component: LiquidityTableComponent;
-  let fixture: ComponentFixture<LiquidityTableComponent>;
+  let component: AssetTableComponent;
+  let fixture: ComponentFixture<AssetTableComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [LiquidityTableComponent]
+      declarations: [AssetTableComponent]
     });
-    fixture = TestBed.createComponent(LiquidityTableComponent);
+    fixture = TestBed.createComponent(AssetTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

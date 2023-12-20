@@ -3,10 +3,10 @@ import {AssetEntry} from "../assets-and-liabilities.result";
 
 @Component({
   selector: 'app-asset-table',
-  templateUrl: './liquidity-table.component.html',
-  styleUrls: ['./liquidity-table.component.css']
+  templateUrl: './asset-table.component.html',
+  styleUrls: ['./asset-table.component.css']
 })
-export class LiquidityTableComponent {
+export class AssetTableComponent {
 
   @Input() entries: AssetEntry[]
   @Input() background: string
