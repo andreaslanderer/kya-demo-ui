@@ -19,8 +19,10 @@ import { SelfEmploymentTableComponent } from './professional-background/self-emp
 import { UnemploymentTableComponent } from './professional-background/unemployment-table/unemployment-table.component';
 import { CreateEmbeddingsComponent } from './create-embeddings/create-embeddings.component';
 import { AssetsAndLiabilitiesComponent } from './assets-and-liabilities/assets-and-liabilities.component';
-import { LiquidityTableComponent } from './assets-and-liabilities/liquidity-table/liquidity-table.component';
+import { AssetTableComponent } from './assets-and-liabilities/asset-table/asset-table.component';
 import { PersonalDetailsComponent } from './family-situation/personal-details/personal-details.component';
+import { SourceOfWealthTableComponent } from './source-of-wealth/source-of-wealth-table/source-of-wealth-table.component';
+import { SourceOfWealthComponent } from './source-of-wealth/source-of-wealth.component';
 
 registerLocaleData(localeCh);
 
@@ -37,8 +39,10 @@ registerLocaleData(localeCh);
     UnemploymentTableComponent,
     CreateEmbeddingsComponent,
     AssetsAndLiabilitiesComponent,
-    LiquidityTableComponent,
-    PersonalDetailsComponent
+    AssetTableComponent,
+    PersonalDetailsComponent,
+    SourceOfWealthTableComponent,
+    SourceOfWealthComponent
   ],
     imports: [
         BrowserModule,
