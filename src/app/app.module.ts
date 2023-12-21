@@ -23,6 +23,8 @@ import { AssetTableComponent } from './assets-and-liabilities/asset-table/asset-
 import { PersonalDetailsComponent } from './family-situation/personal-details/personal-details.component';
 import { SourceOfWealthTableComponent } from './source-of-wealth/source-of-wealth-table/source-of-wealth-table.component';
 import { SourceOfWealthComponent } from './source-of-wealth/source-of-wealth.component';
+import { SourceOfFundsComponent } from './source-of-funds/source-of-funds.component';
+import {SourceOfFundsTableComponent} from "./source-of-funds/source-of-funds-table/source-of-funds-table.component";
 
 registerLocaleData(localeCh);
 
@@ -42,7 +44,9 @@ registerLocaleData(localeCh);
     AssetTableComponent,
     PersonalDetailsComponent,
     SourceOfWealthTableComponent,
-    SourceOfWealthComponent
+    SourceOfWealthComponent,
+    SourceOfFundsTableComponent,
+    SourceOfFundsComponent
   ],
     imports: [
         BrowserModule,

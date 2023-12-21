@@ -11,4 +11,5 @@ export interface SourceOfWealthEntry {
   type: string
   amount: number
   currency: string
+  year: string
 }
