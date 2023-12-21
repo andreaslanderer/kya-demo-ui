@@ -75,6 +75,20 @@
           <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
             <span class="slds-assistive-text">Sort by: </span>
             <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+              <span class="slds-truncate" title="Currency">Institution</span>
+              <span class="slds-icon_container slds-icon-utility-arrowdown">
+                  <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                    <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                  </svg>
+                </span>
+            </div>
+          </a>
+        </th>
+
+        <th aria-sort="none" class="slds-has-button-menu slds-is-resizable slds-is-sortable" scope="col">
+          <a class="slds-th__action slds-text-link_reset" href="#" role="button" tabindex="-1">
+            <span class="slds-assistive-text">Sort by: </span>
+            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
               <span class="slds-truncate" title="Background">Background</span>
               <span class="slds-icon_container slds-icon-utility-arrowdown">
                   <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
@@ -108,6 +122,9 @@
         </td>
         <td data-label="Year" role="gridcell">
           <div class="slds-truncate" title="{{ entry.year }}">{{ entry.year }}</div>
+        </td>
+        <td data-label="Institution" role="gridcell">
+          <div class="slds-truncate" title="{{ entry.institution }}">{{ entry.institution }}</div>
         </td>
         <td data-label="Background Information" role="gridcell">
           <button type="button" nglButton (click)="open()">Show</button>
